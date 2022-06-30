@@ -4,8 +4,17 @@ import './Item.css'
 const Item = ({card}) => {
     const [showLogo, setShowLogo] = useState(true);
     const {name,img, options} = card;
+    
+    const keepTrue = () => {
+        setShowLogo(true);
+    };
+    const handleClick = () => {
+        setShowLogo(!showLogo)
+        setTimeout(keepTrue,4000)
+    };
+
   return (
-    <div className="card" onClick={() => setShowLogo(!showLogo)} >
+    <div className="card" onClick={handleClick} >
 
         {
             showLogo ? (<div>
